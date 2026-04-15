@@ -2,31 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>🌸 For Shiza 💕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>🌸 Shiza - Maan Ja Na 💕</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             min-height: 100vh;
+            width: 100%;
             background: linear-gradient(145deg, #fef2f8 0%, #ffe4f0 100%);
-            font-family: 'Poppins', 'Segoe UI', system-ui, 'Quicksand', sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Quicksand', system-ui, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
+            padding: 12px;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* floating hearts and flowers background */
+        /* floating hearts background - scaled for mobile */
         body::before {
             content: "🌸💕🌷💖🌺💗✨";
-            font-size: 70px;
+            font-size: 50px;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -35,54 +37,52 @@
             pointer-events: none;
             width: 100%;
             text-align: center;
-            letter-spacing: 25px;
+            letter-spacing: 15px;
             transform: rotate(-3deg);
         }
 
-        /* main card */
+        /* main card - FULL WIDTH ON MOBILE */
         .card {
-            max-width: 500px;
+            max-width: 100%;
             width: 100%;
-            background: rgba(255, 252, 254, 0.96);
+            background: rgba(255, 252, 254, 0.97);
             backdrop-filter: blur(4px);
-            border-radius: 55px;
-            box-shadow: 0 30px 55px -15px rgba(255, 105, 150, 0.25), 0 10px 25px rgba(255, 120, 160, 0.2);
+            border-radius: 40px;
+            box-shadow: 0 20px 40px -12px rgba(255, 105, 150, 0.25);
             overflow: hidden;
-            transition: all 0.3s ease;
             border: 2px solid #ffb7c5;
-            animation: floatIn 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            animation: floatIn 0.5s ease-out;
         }
 
         @keyframes floatIn {
-            0% { opacity: 0; transform: translateY(50px) scale(0.95); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* header with soft pink theme */
+        /* header */
         .hero {
             background: linear-gradient(125deg, #ffb7c5, #ff9eb0, #ff8da6);
-            padding: 1.5rem 1.2rem 1.2rem;
+            padding: 24px 16px 20px;
             text-align: center;
             position: relative;
-            border-bottom: 5px solid #ffccd9;
+            border-bottom: 4px solid #ffccd9;
         }
 
         .hero::after {
             content: "🌸💖🎀💕✨";
             position: absolute;
-            bottom: -18px;
-            right: 20px;
-            font-size: 42px;
+            bottom: -14px;
+            right: 16px;
+            font-size: 32px;
             opacity: 0.35;
             pointer-events: none;
         }
 
         .hero h1 {
-            font-size: 2.2rem;
+            font-size: clamp(1.6rem, 7vw, 2.2rem);
             font-weight: 800;
             color: #fff0f3;
-            text-shadow: 3px 3px 0 #c96f8a;
-            letter-spacing: -0.5px;
+            text-shadow: 2px 2px 0 #c96f8a;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -97,47 +97,44 @@
 
         @keyframes bounceLove {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px) rotate(2deg); }
+            50% { transform: translateY(-6px) rotate(2deg); }
         }
 
         .hero p {
             color: #fff5f7;
             font-weight: 600;
             margin-top: 8px;
-            font-size: 1rem;
+            font-size: clamp(0.85rem, 4vw, 1rem);
             background: rgba(255, 220, 230, 0.5);
             display: inline-block;
-            padding: 0.25rem 1rem;
+            padding: 4px 16px;
             border-radius: 40px;
-            backdrop-filter: blur(2px);
         }
 
-        /* apology box with feminine colors */
+        /* apology box */
         .apology-box {
             background: #fff9fb;
-            margin: 1.2rem 1.2rem 0.3rem 1.2rem;
-            padding: 0.9rem 1rem;
-            border-radius: 48px;
-            box-shadow: 0 12px 22px rgba(255, 120, 150, 0.12);
+            margin: 16px 16px 8px 16px;
+            padding: 12px 12px;
+            border-radius: 36px;
+            box-shadow: 0 8px 18px rgba(255, 120, 150, 0.1);
             border: 2px solid #ffccda;
             text-align: center;
-            transition: all 0.2s;
         }
 
         .sorry-text {
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 3.8vw, 0.95rem);
             font-weight: 600;
             color: #b5476e;
             background: #fff5f8;
-            padding: 0.6rem 0.7rem;
-            border-radius: 42px;
+            padding: 8px 10px;
+            border-radius: 35px;
             line-height: 1.45;
-            display: inline-block;
             width: 100%;
         }
 
         .sorry-text p {
-            margin: 5px 0;
+            margin: 6px 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -146,14 +143,14 @@
         }
 
         .cute-girl-line {
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 4vw, 1.05rem);
             background: #ffe2ed;
-            border-radius: 60px;
-            padding: 4px 10px;
+            border-radius: 50px;
+            padding: 5px 12px;
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            margin: 4px 0;
+            margin: 5px 0;
             animation: gentleShake 1s infinite;
         }
 
@@ -166,49 +163,44 @@
         .bandri-highlight {
             background: #ffc0d0;
             border-radius: 50px;
-            padding: 3px 10px;
+            padding: 4px 12px;
             font-weight: bold;
             color: #9e3d60;
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            font-size: 1rem;
+            font-size: clamp(0.85rem, 3.8vw, 0.95rem);
         }
 
         .special-sorry {
-            margin-top: 8px;
-            font-size: 1rem;
+            margin-top: 10px;
+            font-size: clamp(0.85rem, 3.8vw, 0.95rem);
             background: linear-gradient(145deg, #ff9eb0, #ff7d9c);
             color: white;
-            padding: 5px 14px;
+            padding: 6px 16px;
             border-radius: 50px;
             display: inline-block;
-            box-shadow: 0 4px 10px rgba(255, 80, 120, 0.2);
+            box-shadow: 0 3px 8px rgba(255, 80, 120, 0.2);
         }
 
-        /* video gallery - OPTIMIZED FOR VERTICAL/PORTRAIT VIDEOS */
+        /* VIDEO GALLERY - FULL WIDTH OPTIMIZED */
         .video-gallery {
-            padding: 1rem 1.2rem 1.5rem;
+            padding: 12px 16px 20px;
             display: flex;
             flex-direction: column;
-            gap: 1.3rem;
+            gap: 18px;
         }
 
         .video-item {
             background: #fffafc;
-            border-radius: 38px;
+            border-radius: 32px;
             overflow: hidden;
-            box-shadow: 0 15px 30px -10px rgba(255, 100, 130, 0.12);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 22px -8px rgba(255, 100, 130, 0.12);
             border: 1px solid #ffccda;
+            width: 100%;
         }
 
-        .video-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 30px -10px rgba(255, 100, 140, 0.25);
-        }
-
-        /* CONTAINER THAT ADAPTS TO VERTICAL VIDEO */
+        /* VIDEO CONTAINER - RESPONSIVE */
         .vid-container {
             position: relative;
             width: 100%;
@@ -216,32 +208,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 200px;
+            min-height: 240px;
+            overflow: hidden;
         }
 
-        /* VIDEO STYLES - AUTO SIZE ADJUSTMENT FOR PORTRAIT */
+        /* VIDEO - PERFECT AUTO SIZE FOR MOBILE VERTICAL */
         video {
-            width: auto;
+            width: 100%;
             height: auto;
-            max-width: 100%;
             max-height: 65vh;
             object-fit: contain;
-            background: #1a1115;
+            background: #0f0b0e;
             display: block;
-            margin: 0 auto;
         }
 
-        /* When video is vertical/portrait, center it beautifully */
-        .vid-container:has(video[data-orientation="portrait"]) {
-            background: #1a1115;
-        }
-
+        /* Button row */
         .button-row {
-            padding: 0.8rem 0.9rem 0.9rem;
+            padding: 12px 12px 14px;
             background: #fff7f9;
             display: flex;
             justify-content: center;
-            gap: 0.9rem;
+            gap: 12px;
             flex-wrap: wrap;
             border-top: 2px dashed #ffc0d0;
         }
@@ -249,35 +236,32 @@
         .play-btn {
             background: linear-gradient(115deg, #ff9eb0, #ff7d9c);
             border: none;
-            padding: 0.55rem 1.3rem;
+            padding: 10px 20px;
             border-radius: 60px;
             font-weight: 700;
-            font-size: 0.9rem;
-            font-family: 'Poppins', sans-serif;
+            font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+            font-family: inherit;
             color: #fff0f3;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             cursor: pointer;
-            box-shadow: 0 4px 0 #b54a6e;
-            transition: all 0.1s linear;
+            box-shadow: 0 3px 0 #b54a6e;
+            transition: all 0.1s ease;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .play-btn:active {
             transform: translateY(2px);
-            box-shadow: 0 2px 0 #b54a6e;
+            box-shadow: 0 1px 0 #b54a6e;
         }
 
-        .play-btn:hover {
-            background: linear-gradient(115deg, #ffb0c0, #ff8daa);
-            transform: scale(1.01);
-        }
-
+        /* Footer */
         .footer-message {
             background: #fff5f8;
-            padding: 0.8rem 1rem;
+            padding: 14px 12px;
             text-align: center;
-            font-size: 0.8rem;
+            font-size: clamp(0.75rem, 3.5vw, 0.85rem);
             color: #b84d72;
             font-weight: 600;
             border-top: 2px solid #ffccda;
@@ -294,73 +278,130 @@
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
+            0%, 100% { transform: scale(1); }
             50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
         }
 
-        @media (max-width: 640px) {
+        /* MOBILE FIRST - EXTRA SAFETY FOR SMALL SCREENS */
+        @media (max-width: 600px) {
             body {
-                padding: 0.6rem;
+                padding: 8px;
             }
-            .card { 
-                border-radius: 40px;
-                max-width: 100%;
+            
+            .card {
+                border-radius: 32px;
             }
-            .hero h1 { 
-                font-size: 1.6rem;
+            
+            .hero {
+                padding: 18px 12px 16px;
             }
-            .hero p {
-                font-size: 0.85rem;
+            
+            .hero h1 {
+                font-size: 1.5rem;
             }
-            .apology-box { 
-                margin: 0.8rem;
-                padding: 0.6rem;
+            
+            .apology-box {
+                margin: 12px 12px 6px;
+                padding: 10px;
             }
-            .sorry-text p { 
-                font-size: 0.85rem;
-            }
-            .cute-girl-line { 
-                font-size: 0.95rem;
-                padding: 3px 8px;
-            }
-            .special-sorry {
-                font-size: 0.85rem;
-                padding: 4px 12px;
-            }
-            .play-btn {
-                padding: 0.45rem 1rem;
-                font-size: 0.8rem;
-            }
+            
             .video-gallery {
-                padding: 0.8rem 0.9rem 1.2rem;
-                gap: 1rem;
+                padding: 10px 12px 16px;
+                gap: 14px;
             }
+            
+            .video-item {
+                border-radius: 28px;
+            }
+            
+            .vid-container {
+                min-height: 200px;
+            }
+            
             video {
                 max-height: 55vh;
+                width: 100%;
+                height: auto;
+            }
+            
+            .play-btn {
+                padding: 8px 16px;
+            }
+            
+            .cute-girl-line {
+                padding: 4px 10px;
+                font-size: 0.85rem;
+            }
+            
+            .special-sorry {
+                padding: 5px 12px;
+                font-size: 0.8rem;
             }
         }
 
-        /* For portrait orientation on phones - give more space */
-        @media (orientation: portrait) and (max-width: 768px) {
+        /* For VERY small phones */
+        @media (max-width: 380px) {
+            .hero h1 {
+                font-size: 1.3rem;
+            }
+            
+            .play-btn {
+                padding: 7px 14px;
+                font-size: 0.75rem;
+            }
+            
+            .vid-container {
+                min-height: 180px;
+            }
+            
             video {
-                max-height: 58vh;
-                width: auto;
-                max-width: 100%;
+                max-height: 50vh;
+            }
+        }
+
+        /* Landscape orientation on phones - keep videos visible */
+        @media (orientation: landscape) and (max-height: 500px) {
+            .card {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            video {
+                max-height: 48vh;
+            }
+            
+            .vid-container {
+                min-height: 160px;
+            }
+            
+            .hero {
+                padding: 12px;
+            }
+            
+            .video-gallery {
+                gap: 10px;
+                padding: 8px 12px 12px;
             }
         }
 
         .error-fallback {
             background: #ffe0e8;
             border-radius: 24px;
-            padding: 6px 12px;
+            padding: 8px 12px;
             font-size: 0.7rem;
             color: #b84d72;
             text-align: center;
             margin: 8px;
         }
 
-        button:focus, video:focus { outline: none; }
+        button:focus, video:focus {
+            outline: none;
+        }
+        
+        /* Remove any zoom issues */
+        input, textarea, button, select, a {
+            -webkit-tap-highlight-color: transparent;
+        }
     </style>
 </head>
 <body>
@@ -373,7 +414,7 @@
         <p>✨ Ab maan bhi ja na! ✨</p>
     </div>
     
-    <!-- apology text with feminine style -->
+    <!-- Apology text -->
     <div class="apology-box">
         <div class="sorry-text">
             <p>💗 <strong>Chal ab maan b ja na bas krde na narazgi</strong> 💗</p>
@@ -399,8 +440,9 @@
         <!-- Video 1 -->
         <div class="video-item">
             <div class="vid-container" id="container1">
-                <video id="video1" preload="metadata" playsinline crossorigin="anonymous">
+                <video id="video1" preload="metadata" playsinline webkit-playsinline>
                     <source src="videos/1.mp4" type="video/mp4">
+                    Your browser doesn't support video.
                 </video>
             </div>
             <div class="button-row">
@@ -416,7 +458,7 @@
         <!-- Video 2 -->
         <div class="video-item">
             <div class="vid-container" id="container2">
-                <video id="video2" preload="metadata" playsinline crossorigin="anonymous">
+                <video id="video2" preload="metadata" playsinline webkit-playsinline>
                     <source src="videos/2.mp4" type="video/mp4">
                 </video>
             </div>
@@ -433,7 +475,7 @@
         <!-- Video 3 -->
         <div class="video-item">
             <div class="vid-container" id="container3">
-                <video id="video3" preload="metadata" playsinline crossorigin="anonymous">
+                <video id="video3" preload="metadata" playsinline webkit-playsinline>
                     <source src="videos/3.mp4" type="video/mp4">
                 </video>
             </div>
@@ -465,64 +507,60 @@
             video3: document.getElementById('container3')
         };
 
-        // Function to detect and adjust for portrait/vertical videos
-        function adjustForPortraitVideo(videoElement, container) {
+        // Function to auto-adjust vertical/portrait videos perfectly
+        function adjustVideoForMobile(videoElement, container) {
             if (!videoElement || !container) return;
             
-            // Remove any existing data attribute
-            videoElement.removeAttribute('data-orientation');
-            
-            // If video metadata is loaded, check dimensions
-            if (videoElement.videoWidth && videoElement.videoHeight) {
-                const isPortrait = videoElement.videoHeight > videoElement.videoWidth;
-                if (isPortrait) {
-                    videoElement.setAttribute('data-orientation', 'portrait');
-                    // For portrait videos, ensure they don't stretch too wide
-                    videoElement.style.width = 'auto';
-                    videoElement.style.height = 'auto';
-                    videoElement.style.maxWidth = '100%';
-                    videoElement.style.maxHeight = '65vh';
-                    // Center the container content
+            const updateVideoSize = () => {
+                if (videoElement.videoWidth && videoElement.videoHeight) {
+                    const isPortrait = videoElement.videoHeight > videoElement.videoWidth;
+                    const screenWidth = window.innerWidth;
+                    const cardWidth = document.querySelector('.card')?.offsetWidth || screenWidth - 32;
+                    
+                    if (isPortrait) {
+                        // For portrait videos - let height determine width naturally
+                        videoElement.style.width = 'auto';
+                        videoElement.style.height = 'auto';
+                        videoElement.style.maxWidth = '100%';
+                        videoElement.style.maxHeight = '60vh';
+                        videoElement.style.objectFit = 'contain';
+                    } else {
+                        // For landscape videos - fill width but maintain aspect
+                        videoElement.style.width = '100%';
+                        videoElement.style.height = 'auto';
+                        videoElement.style.maxHeight = '55vh';
+                        videoElement.style.objectFit = 'contain';
+                    }
+                    
+                    // Center the video
                     container.style.display = 'flex';
                     container.style.justifyContent = 'center';
                     container.style.alignItems = 'center';
-                } else {
-                    videoElement.setAttribute('data-orientation', 'landscape');
-                    videoElement.style.width = '100%';
-                    videoElement.style.height = 'auto';
                 }
+            };
+            
+            // Run on metadata load
+            if (videoElement.readyState >= 1) {
+                updateVideoSize();
             }
-        }
-
-        // Apply adjustment when metadata loads
-        function setupVideoAutoAdjust(videoElement, container) {
-            if (!videoElement) return;
+            videoElement.addEventListener('loadedmetadata', updateVideoSize);
+            videoElement.addEventListener('loadeddata', updateVideoSize);
             
-            // When metadata loads, adjust
-            videoElement.addEventListener('loadedmetadata', function() {
-                adjustForPortraitVideo(videoElement, container);
-            });
-            
-            // If video already has dimensions (cached), adjust immediately
-            if (videoElement.videoWidth && videoElement.videoHeight) {
-                adjustForPortraitVideo(videoElement, container);
-            }
-            
-            // Also adjust on resize (for responsiveness)
-            window.addEventListener('resize', function() {
-                if (videoElement.videoWidth && videoElement.videoHeight) {
-                    adjustForPortraitVideo(videoElement, container);
-                }
+            // Also on window resize
+            window.addEventListener('resize', () => {
+                setTimeout(updateVideoSize, 50);
             });
         }
 
-        // Set up each video
-        setupVideoAutoAdjust(video1, containers.video1);
-        setupVideoAutoAdjust(video2, containers.video2);
-        setupVideoAutoAdjust(video3, containers.video3);
+        // Apply to all videos
+        adjustVideoForMobile(video1, containers.video1);
+        adjustVideoForMobile(video2, containers.video2);
+        adjustVideoForMobile(video3, containers.video3);
 
+        // Playback function
         function playVideoWithGrace(videoElement, isReplay = false) {
             if (!videoElement) return;
+            
             if (isReplay) {
                 videoElement.currentTime = 0;
                 videoElement.play().catch(handlePlayError);
@@ -538,15 +576,16 @@
                 if (container && !container.querySelector('.file-access-note')) {
                     const errDiv = document.createElement('div');
                     errDiv.className = 'error-fallback file-access-note';
-                    errDiv.innerHTML = '💕 Video not found!<br>Make sure videos are in <strong>videos/</strong> folder with names:<br>1.mp4, 2.mp4, 3.mp4 💕';
+                    errDiv.innerHTML = '💕 Video not found!<br>Place videos in <strong>videos/</strong> folder:<br>1.mp4, 2.mp4, 3.mp4 💕';
                     const buttonRow = container.querySelector('.button-row');
                     if (buttonRow) buttonRow.insertAdjacentElement('afterend', errDiv);
                     else container.appendChild(errDiv);
-                    setTimeout(() => { if(errDiv && errDiv.remove) errDiv.remove(); }, 7000);
+                    setTimeout(() => { if(errDiv && errDiv.remove) errDiv.remove(); }, 6000);
                 }
             }
         }
 
+        // Button click handlers
         const allPlayBtns = document.querySelectorAll('.play-btn');
         allPlayBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -560,6 +599,7 @@
             });
         });
 
+        // Play feedback
         function showPlayFeedback(videoElem) {
             const container = videoElem.closest('.video-item');
             if (!container) return;
@@ -578,27 +618,28 @@
                 else container.appendChild(feedbackSpan);
             }
             feedbackSpan.innerHTML = '💖 ab dekh le, maan ja na! 💖';
-            setTimeout(() => { if (feedbackSpan) feedbackSpan.innerHTML = ''; }, 1300);
+            setTimeout(() => { if (feedbackSpan) feedbackSpan.innerHTML = ''; }, 1200);
         }
 
         allVideos.forEach(vid => {
             if (vid) {
                 vid.addEventListener('play', () => showPlayFeedback(vid));
-                vid.addEventListener('error', (e) => {
+                vid.addEventListener('error', () => {
                     const container = vid.closest('.video-item');
                     if (container && !container.querySelector('.perm-error-note')) {
                         const errBox = document.createElement('div');
                         errBox.className = 'error-fallback perm-error-note';
-                        errBox.innerHTML = '💗 Video file missing!<br>Place videos in <strong>videos/</strong> folder: 1.mp4, 2.mp4, 3.mp4 💗';
+                        errBox.innerHTML = '💗 Video missing!<br>Add videos to <strong>videos/</strong> folder: 1.mp4, 2.mp4, 3.mp4 💗';
                         const row = container.querySelector('.button-row');
                         if(row) row.insertAdjacentElement('afterend', errBox);
                         else container.appendChild(errBox);
-                        setTimeout(() => { if(errBox && errBox.remove) errBox.remove(); }, 8000);
+                        setTimeout(() => { if(errBox && errBox.remove) errBox.remove(); }, 7000);
                     }
                 });
             }
         });
 
+        // Pause other videos when one plays
         function pauseOtherVideos(currentVideo) {
             allVideos.forEach(video => {
                 if (video && video !== currentVideo && !video.paused) {
@@ -610,22 +651,23 @@
         allVideos.forEach(video => {
             if (video) {
                 video.addEventListener('play', function() { pauseOtherVideos(this); });
-                video.addEventListener('click', () => {
+                video.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     if (video.paused) video.play().catch(()=>{});
                     else video.pause();
                 });
             }
         });
 
-        // Floating hint
+        // Floating hint - disappears quickly
         const infoDiv = document.createElement('div');
         infoDiv.style.position = 'fixed';
-        infoDiv.style.bottom = '12px';
-        infoDiv.style.left = '12px';
+        infoDiv.style.bottom = '10px';
+        infoDiv.style.left = '10px';
         infoDiv.style.background = 'rgba(255, 210, 225, 0.92)';
         infoDiv.style.backdropFilter = 'blur(6px)';
         infoDiv.style.padding = '4px 10px';
-        infoDiv.style.borderRadius = '50px';
+        infoDiv.style.borderRadius = '40px';
         infoDiv.style.fontSize = '9px';
         infoDiv.style.fontWeight = 'bold';
         infoDiv.style.color = '#a13e60';
@@ -635,19 +677,21 @@
         infoDiv.innerHTML = '📁 videos/1.mp4 , 2.mp4 , 3.mp4 💕';
         document.body.appendChild(infoDiv);
         setTimeout(() => {
-            infoDiv.style.opacity = '0.5';
-            setTimeout(() => { if(infoDiv && infoDiv.remove) infoDiv.remove(); }, 5000);
-        }, 5000);
+            if(infoDiv && infoDiv.remove) infoDiv.remove();
+        }, 4000);
 
-        // Extra animated style
+        // Additional CSS for mobile perfection
         const style = document.createElement('style');
         style.textContent = `
-            .play-btn { transition: all 0.15s; }
-            .video-item { transition: transform 0.2s, box-shadow 0.2s; }
-            .sorry-text p { animation: fadeSlide 0.5s ease-out; }
-            @keyframes fadeSlide {
-                from { opacity: 0; transform: translateY(10px); }
-                to { opacity: 1; transform: translateY(0); }
+            .play-btn {
+                transition: transform 0.1s, box-shadow 0.1s;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .play-btn:active {
+                transform: translateY(2px);
+            }
+            .video-item {
+                transition: transform 0.2s;
             }
             .special-sorry {
                 animation: wobble 1s infinite;
@@ -660,15 +704,20 @@
             .cute-girl-line {
                 transition: all 0.2s;
             }
-            .cute-girl-line:hover {
-                transform: scale(1.01);
-                background: #ffd5e2;
+            /* Ensure no horizontal scroll */
+            body, .card {
+                overflow-x: hidden;
             }
-            .vid-container {
-                transition: all 0.2s;
+            video {
+                border-radius: 0;
             }
         `;
         document.head.appendChild(style);
+        
+        // Force a resize event to ensure proper sizing on load
+        setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));
+        }, 100);
     })();
 </script>
 </body>
