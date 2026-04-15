@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Shiza Meri Jaan ❤️‍🔥 | Maan Ja Na</title>
+    <title>🐒 Shiza - Maan Ja Na 🎀</title>
     <style>
         * {
             margin: 0;
@@ -13,8 +13,8 @@
 
         body {
             min-height: 100vh;
-            background: radial-gradient(circle at 10% 30%, #ffdde1 0%, #f9c9e2 100%);
-            font-family: 'Poppins', 'Segoe UI', 'Quicksand', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #fff3e0 0%, #ffe6f0 100%);
+            font-family: 'Poppins', 'Segoe UI', system-ui, 'Quicksand', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -23,353 +23,332 @@
             overflow-x: hidden;
         }
 
-        /* floating animated elements */
-        .floating-hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .heart-float {
+        /* floating banana and monkey prints */
+        body::before {
+            content: "🐒🍌🐒🍌🐒🍌";
+            font-size: 70px;
             position: absolute;
-            font-size: 1.5rem;
-            opacity: 0.5;
-            animation: floatHeart linear infinite;
-            color: #ff88aa;
-        }
-
-        @keyframes floatHeart {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-20vh) rotate(360deg);
-                opacity: 0;
-            }
+            bottom: 0;
+            left: 0;
+            opacity: 0.05;
+            white-space: nowrap;
+            pointer-events: none;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 25px;
+            transform: rotate(-3deg);
         }
 
         /* main card */
         .card {
-            max-width: 1000px;
+            max-width: 950px;
             width: 100%;
-            background: rgba(255, 250, 245, 0.96);
-            backdrop-filter: blur(2px);
-            border-radius: 72px;
-            box-shadow: 0 30px 55px -15px rgba(0, 0, 0, 0.3), 0 8px 25px rgba(255, 105, 150, 0.3);
+            background: rgba(255, 250, 240, 0.96);
+            backdrop-filter: blur(4px);
+            border-radius: 70px;
+            box-shadow: 0 30px 55px -15px rgba(0, 0, 0, 0.25), 0 10px 25px rgba(241, 147, 187, 0.3);
             overflow: hidden;
             transition: all 0.3s ease;
-            border: 2px solid rgba(255, 215, 225, 0.9);
-            position: relative;
-            z-index: 2;
-            animation: bounceIn 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
+            border: 2px solid #ffd966;
+            animation: floatIn 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.2);
         }
 
-        @keyframes bounceIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.9) translateY(40px);
-            }
-            60% {
-                transform: scale(1.02) translateY(-5px);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
+        @keyframes floatIn {
+            0% { opacity: 0; transform: translateY(50px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* header with monkey & fun vibe */
+        /* header with monkey theme */
         .hero {
-            background: linear-gradient(145deg, #ffb347, #ff8c42);
-            padding: 1.8rem 2rem 1.2rem;
+            background: linear-gradient(125deg, #f9b81b, #f5a623, #ff8c42);
+            padding: 1.8rem 1.5rem 1.5rem;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            border-bottom: 5px solid #ffdd99;
         }
 
-        .hero::before {
-            content: "🐒🐵🙈🙉🙊";
+        .hero::after {
+            content: "🐵🙈🙉🙊🐒";
             position: absolute;
-            font-size: 70px;
-            bottom: -15px;
-            left: -20px;
-            opacity: 0.2;
+            bottom: -18px;
+            right: 20px;
+            font-size: 48px;
+            opacity: 0.4;
             pointer-events: none;
-            white-space: nowrap;
-            transform: rotate(-8deg);
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.7rem;
             font-weight: 800;
-            color: #fff3e0;
-            text-shadow: 5px 5px 0 #c95a1a;
+            color: #2e241f;
+            text-shadow: 3px 3px 0 #ffc107;
             letter-spacing: -0.5px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
         .hero h1 span {
             display: inline-block;
-            animation: wiggle 1.2s infinite ease;
+            animation: bounceMonkey 0.9s infinite ease;
         }
 
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(12deg); }
-            75% { transform: rotate(-8deg); }
+        @keyframes bounceMonkey {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px) rotate(3deg); }
         }
 
-        .bandri-badge {
-            background: #f7d44a;
-            color: #a53f2b;
-            padding: 0.4rem 1.2rem;
-            border-radius: 60px;
-            font-weight: bold;
-            font-size: 1rem;
-            display: inline-block;
-            margin-top: 12px;
-            box-shadow: 0 4px 0 #b45f2b;
-        }
-
-        /* animated message area */
-        .apology-message {
-            padding: 1.5rem 2rem 0.5rem;
-            text-align: center;
-        }
-
-        .message-bubble {
-            background: #fff0e7;
-            border-radius: 58px;
-            padding: 1.5rem 1.8rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            border: 2px solid #ffcd94;
-            transition: transform 0.2s;
-        }
-
-        .animated-text {
-            font-size: 1.3rem;
+        .hero p {
+            color: #2c1a0c;
             font-weight: 600;
-            color: #bb5e00;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            background: rgba(255, 245, 200, 0.7);
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
         }
 
-        .animated-text p {
-            margin: 0;
+        /* apology box with new funny text */
+        .apology-box {
+            background: #fffaf0;
+            margin: 1.8rem 2rem 0.5rem 2rem;
+            padding: 1.2rem 1.5rem;
+            border-radius: 55px;
+            box-shadow: 0 12px 22px rgba(245, 165, 35, 0.15);
+            border: 2px solid #ffdd99;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .sorry-text {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #b45f2b;
+            background: #fff3e0;
+            padding: 0.8rem 1rem;
+            border-radius: 50px;
+            line-height: 1.55;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .sorry-text p {
+            margin: 8px 0;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
-            animation: fadeSlideUp 0.5s ease backwards;
+            gap: 6px;
         }
 
-        .animated-text p:nth-child(1) { animation-delay: 0.05s; }
-        .animated-text p:nth-child(2) { animation-delay: 0.15s; }
-        .animated-text p:nth-child(3) { animation-delay: 0.25s; }
-        .animated-text p:nth-child(4) { animation-delay: 0.35s; }
-        .animated-text p:nth-child(5) { animation-delay: 0.45s; }
-        .animated-text p:nth-child(6) { animation-delay: 0.55s; }
-
-        @keyframes fadeSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .cute-emoji {
-            font-size: 1.8rem;
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
-            animation: bounceEmoji 0.8s infinite alternate;
-        }
-
-        @keyframes bounceEmoji {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(-6px); }
-        }
-
-        .highlight {
-            background: #ffe0b5;
+        .cute-monkey-line {
+            font-size: 1.3rem;
+            background: #ffe6b3;
             border-radius: 60px;
-            padding: 0.2rem 1rem;
-            font-family: monospace;
+            padding: 6px 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0;
+            animation: gentleShake 1s infinite;
+        }
+
+        @keyframes gentleShake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+
+        .bandri-highlight {
+            background: #ffd966;
+            border-radius: 50px;
+            padding: 5px 14px;
             font-weight: bold;
-            color: #c2521a;
+            color: #4a2c12;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1.2rem;
+        }
+
+        .special-sorry {
+            margin-top: 12px;
+            font-size: 1.2rem;
+            background: linear-gradient(145deg, #ffb347, #ff8c1a);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         /* video gallery */
         .video-gallery {
-            padding: 1.2rem 2rem 1.8rem;
+            padding: 1.5rem 2rem 2rem;
             display: flex;
             flex-direction: column;
             gap: 1.8rem;
         }
 
         .video-item {
-            background: #ffffffdd;
-            backdrop-filter: blur(12px);
+            background: #fffaf2;
             border-radius: 48px;
             overflow: hidden;
-            transition: all 0.3s;
-            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ffc7a2;
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #ffdb9f;
         }
 
         .video-item:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 30px -10px #ffa07a66;
+            box-shadow: 0 25px 35px -12px rgba(245, 140, 40, 0.3);
         }
 
         .vid-container {
             position: relative;
             width: 100%;
-            background: #221c19;
-            aspect-ratio: 16 / 9;
+            background: #221c15;
+            border-radius: 36px 36px 28px 28px;
             overflow: hidden;
+            aspect-ratio: 16 / 9;
         }
 
         video {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            background: #000;
+            background: #0f0b07;
             display: block;
         }
 
         .button-row {
-            padding: 0.9rem 1.2rem 1rem;
+            padding: 1rem 1.2rem 1.2rem;
+            background: #fff5e8;
             display: flex;
             justify-content: center;
             gap: 1.2rem;
             flex-wrap: wrap;
-            background: #fffaf2;
-            border-top: 1px solid #ffe0bf;
+            border-top: 2px dashed #ffce8e;
         }
 
         .play-btn {
-            background: linear-gradient(115deg, #ff9966, #ff5e62);
+            background: linear-gradient(115deg, #ffaa44, #ff8c1a);
             border: none;
-            padding: 0.7rem 1.8rem;
+            padding: 0.7rem 1.6rem;
             border-radius: 60px;
             font-weight: 700;
             font-size: 1rem;
-            color: white;
+            font-family: 'Poppins', sans-serif;
+            color: #2e241f;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             cursor: pointer;
-            transition: all 0.15s;
-            box-shadow: 0 5px 0 #a63f2c;
-            font-family: inherit;
+            box-shadow: 0 5px 0 #b45f1b;
+            transition: all 0.1s linear;
         }
 
         .play-btn:active {
             transform: translateY(2px);
-            box-shadow: 0 2px 0 #a63f2c;
+            box-shadow: 0 2px 0 #b45f1b;
         }
 
         .play-btn:hover {
-            background: linear-gradient(115deg, #ffad7a, #ff7579);
+            background: linear-gradient(115deg, #ffbb55, #ffa033);
             transform: scale(1.01);
         }
 
         .note-text {
-            font-size: 0.7rem;
+            font-size: 0.78rem;
             text-align: center;
-            background: #fff2e4;
+            margin-top: 6px;
+            color: #c47e42;
+            font-weight: 500;
+            background: #fff0df;
             padding: 4px;
-            color: #c26e38;
-            font-weight: 600;
+            border-radius: 30px;
         }
 
-        .footer {
-            background: #ffdec2;
-            padding: 1rem;
+        .footer-message {
+            background: #ffeed5;
+            padding: 1rem 1.5rem;
             text-align: center;
-            font-weight: 600;
-            color: #b6511a;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
             font-size: 0.9rem;
-        }
-
-        @media (max-width: 650px) {
-            .animated-text {
-                font-size: 1rem;
-            }
-            .hero h1 {
-                font-size: 1.7rem;
-            }
-            .video-gallery {
-                padding: 1rem;
-            }
-            .message-bubble {
-                padding: 1rem;
-            }
-        }
-
-        .bandri-animation {
-            display: inline-block;
-            animation: shakeHead 2s infinite;
-        }
-
-        @keyframes shakeHead {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-4px); }
-            75% { transform: translateX(4px); }
-        }
-
-        .cute-tag {
-            background: #f9e2b7;
-            border-radius: 60px;
-            display: inline-flex;
+            color: #a5672e;
+            font-weight: 600;
+            border-top: 2px solid #ffd58c;
+            display: flex;
             align-items: center;
-            padding: 0.2rem 0.8rem;
-            gap: 6px;
-            font-size: 0.8rem;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
+
+        .heart-beat {
+            animation: pulse 0.8s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 640px) {
+            .card { border-radius: 45px; }
+            .hero h1 { font-size: 1.9rem; }
+            .apology-box { margin: 1rem; }
+            .sorry-text p { font-size: 0.95rem; }
+            .cute-monkey-line { font-size: 1rem; }
+        }
+
+        .error-fallback {
+            background: #ffe1bf;
+            border-radius: 24px;
+            padding: 6px 12px;
+            font-size: 0.7rem;
+            color: #b45f2b;
+            text-align: center;
+            margin: 8px;
+        }
+
+        button:focus, video:focus { outline: none; }
     </style>
 </head>
 <body>
-<div class="floating-hearts" id="floatingHearts"></div>
 
 <div class="card">
     <div class="hero">
         <h1>
-            <span>🐒</span> OYE SHIZA! <span>🙈</span>
+            🐒 Oye <span>Bandri</span> SHIZA 🐒
         </h1>
-        <div class="bandri-badge">✨ Meri Bandri ✨ Churail ✨ Mandri ✨</div>
+        <p>💥 Ab maan bhi ja na! 💥</p>
     </div>
-
-    <div class="apology-message">
-        <div class="message-bubble">
-            <div class="animated-text">
-                <p> <span class="cute-emoji">🥺👉👈</span> Chal ab maan b ja na bas krde na narazgi <span class="cute-emoji">💢➡️😇</span> </p>
-                <p> <span class="cute-emoji">🗣️📢</span> Inna rokha rokha bolti thk se reply b nhi krti <span class="cute-emoji">😤😘</span> </p>
-                <p> <span class="cute-emoji">🙆‍♂️💞</span> Maan b ja na oye bandri <span class="cute-emoji">🐒✨</span> </p>
-                <p> <span class="cute-emoji">🧙‍♀️💋</span> Oye churail, oye sun b ly na maan ja oye <span class="cute-emoji">🫤🫤🫤</span> </p>
-                <p> <span class="cute-emoji">🤏🏻✨</span> ittu c 🤏🏻 cute c mandri ha na meri <span class="cute-emoji">🐒💖</span> </p>
-                <p> <span class="cute-emoji">🎀🤝</span> chal ab maan ja na <span class="highlight">❤️‍🔥 MERI JAAN ❤️‍🔥</span> <span class="cute-emoji bandri-animation">🙈🙉🙊</span> </p>
+    
+    <!-- New funny apology text exactly as requested + animated style -->
+    <div class="apology-box">
+        <div class="sorry-text">
+            <p>🍌 <strong>Chal ab maan b ja na bas krde na narazgi</strong> 🍌</p>
+            <p>😤 <em>Inna rokha rokha bolti thk se reply b nhi krti</em> 😤</p>
+            <div class="cute-monkey-line">
+                <span>🐒</span> Maan b ja na oye bandri <span>🐒</span>
             </div>
+            <div class="cute-monkey-line">
+                <span>🧙‍♀️</span> Oye churail, oye sun b ly na maan ja oye <span>🫤🫤🫤</span>
+            </div>
+            <p>
+                <span class="bandri-highlight">🤏🏻 ittu c cute c bandri ha na meri</span>
+                <span>🐒💖</span>
+            </p>
+            <p><strong>Chal ab maan ja na 🥺👉👈</strong></p>
+        </div>
+        <div class="special-sorry">
+            🎀 A special sorry to a bandri 🎀 <strong>SHIZA 🐒</strong>
         </div>
     </div>
 
@@ -382,10 +361,14 @@
                 </video>
             </div>
             <div class="button-row">
-                <button class="play-btn" data-video="video1">🎬 Play Video 1</button>
-                <button class="play-btn replay-btn" data-video="video1" data-replay="true">🔄 Replay</button>
+                <button class="play-btn" data-video="video1">
+                    <span>🎬</span> Play Video 1
+                </button>
+                <button class="play-btn replay-btn" data-video="video1" data-replay="true">
+                    <span>🔄</span> Replay
+                </button>
             </div>
-            <div class="note-text">💖 teri yaad 💖</div>
+            <div class="note-text">🐒 meri bandri k liye special clip 🍌</div>
         </div>
 
         <!-- Video 2 -->
@@ -396,10 +379,14 @@
                 </video>
             </div>
             <div class="button-row">
-                <button class="play-btn" data-video="video2">🎬 Play Video 2</button>
-                <button class="play-btn replay-btn" data-video="video2" data-replay="true">🔄 Replay</button>
+                <button class="play-btn" data-video="video2">
+                    <span>🎬</span> Play Video 2
+                </button>
+                <button class="play-btn replay-btn" data-video="video2" data-replay="true">
+                    <span>🔄</span> Replay
+                </button>
             </div>
-            <div class="note-text">🐒 bandri special 🐒</div>
+            <div class="note-text">🙈 dekho aur maan jao 🙉</div>
         </div>
 
         <!-- Video 3 -->
@@ -410,123 +397,117 @@
                 </video>
             </div>
             <div class="button-row">
-                <button class="play-btn" data-video="video3">🎬 Play Video 3</button>
-                <button class="play-btn replay-btn" data-video="video3" data-replay="true">🔄 Replay</button>
+                <button class="play-btn" data-video="video3">
+                    <span>🎬</span> Play Video 3
+                </button>
+                <button class="play-btn replay-btn" data-video="video3" data-replay="true">
+                    <span>🔄</span> Replay
+                </button>
             </div>
-            <div class="note-text">🤏🏻 ittu c cute moment 🤏🏻</div>
+            <div class="note-text">🍌 ittu c cute bandri maanja na 🥺</div>
         </div>
     </div>
 
-    <div class="footer">
-        <span>🐵 AB MAAN B JA NA BANDRI 🐵</span>
-        <span>❤️‍🔥 OYE CHURAIL SUN LY ❤️‍🔥</span>
-        <span>✨🤏🏻 MERI MANDRI 🤏🏻✨</span>
+    <div class="footer-message">
+        <span class="heart-beat">💛🐒💛</span> Oye Shiza bandri, ab toh maan hi ja! <span class="heart-beat">🍌💖</span>
     </div>
 </div>
 
 <script>
     (function() {
-        // videos
         const video1 = document.getElementById('video1');
         const video2 = document.getElementById('video2');
         const video3 = document.getElementById('video3');
         const allVideos = [video1, video2, video3];
 
-        function playVideoGrace(videoElement, isReplay = false) {
+        function playVideoWithGrace(videoElement, isReplay = false) {
             if (!videoElement) return;
             if (isReplay) {
                 videoElement.currentTime = 0;
-                videoElement.play().catch(handleError);
+                videoElement.play().catch(handlePlayError);
             } else {
                 if (videoElement.paused || videoElement.ended) {
-                    videoElement.play().catch(handleError);
+                    videoElement.play().catch(handlePlayError);
                 }
             }
-            function handleError(err) {
-                console.warn("Playback error", err);
+
+            function handlePlayError(error) {
+                console.warn("Playback error:", error);
                 let container = videoElement.closest('.video-item');
-                if (container && !container.querySelector('.file-access-error')) {
+                if (container && !container.querySelector('.file-access-note')) {
                     const errDiv = document.createElement('div');
-                    errDiv.className = 'error-fallback file-access-error';
-                    errDiv.style.background = '#ffe0e0';
-                    errDiv.style.padding = '6px 12px';
-                    errDiv.style.margin = '6px 12px';
-                    errDiv.style.borderRadius = '30px';
-                    errDiv.style.fontSize = '0.7rem';
-                    errDiv.style.color = '#b13e3e';
-                    errDiv.style.textAlign = 'center';
-                    errDiv.innerHTML = '🌸 Video missing? Place 1.mp4 , 2.mp4 , 3.mp4 in /Sdcard/shiza/ or change path 🌸';
-                    const btnRow = container.querySelector('.button-row');
-                    if (btnRow) btnRow.insertAdjacentElement('afterend', errDiv);
-                    setTimeout(() => errDiv.remove(), 5000);
+                    errDiv.className = 'error-fallback file-access-note';
+                    errDiv.innerHTML = '🐵 Oops! Video not found at <strong>/Sdcard/shiza/</strong><br>Please place 1.mp4, 2.mp4, 3.mp4 in that folder. 🍌';
+                    const buttonRow = container.querySelector('.button-row');
+                    if (buttonRow) buttonRow.insertAdjacentElement('afterend', errDiv);
+                    else container.appendChild(errDiv);
+                    setTimeout(() => { if(errDiv && errDiv.remove) errDiv.remove(); }, 7000);
                 }
             }
         }
-
-        // pause other videos for cleaner audio
-        function pauseOthers(currentVideo) {
-            allVideos.forEach(vid => {
-                if (vid && vid !== currentVideo && !vid.paused) {
-                    vid.pause();
-                }
-            });
-        }
-
-        allVideos.forEach(vid => {
-            if (vid) {
-                vid.addEventListener('play', () => pauseOthers(vid));
-                vid.addEventListener('error', () => {
-                    const parent = vid.closest('.video-item');
-                    if (parent && !parent.querySelector('.native-error-msg')) {
-                        const errNote = document.createElement('div');
-                        errNote.className = 'native-error-msg';
-                        errNote.innerText = '⚠️ Video file not found, but site is still cute! ⚠️';
-                        errNote.style.fontSize = '0.7rem';
-                        errNote.style.background = '#ffdede';
-                        errNote.style.padding = '4px';
-                        errNote.style.borderRadius = '30px';
-                        errNote.style.textAlign = 'center';
-                        const containerDiv = parent.querySelector('.button-row');
-                        if (containerDiv) containerDiv.insertAdjacentElement('afterend', errNote);
-                        setTimeout(() => errNote.remove(), 4000);
-                    }
-                });
-            }
-        });
 
         const allPlayBtns = document.querySelectorAll('.play-btn');
         allPlayBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const targetId = btn.getAttribute('data-video');
+                const targetVideoId = btn.getAttribute('data-video');
                 const isReplay = btn.getAttribute('data-replay') === 'true';
-                if (targetId) {
-                    const targetVideo = document.getElementById(targetId);
-                    if (targetVideo) {
-                        playVideoGrace(targetVideo, isReplay);
-                        // show cute mini feedback
-                        showMiniFeedback(btn);
-                    }
+                if (targetVideoId) {
+                    const videoElem = document.getElementById(targetVideoId);
+                    if (videoElem) playVideoWithGrace(videoElem, isReplay);
                 }
             });
         });
 
-        function showMiniFeedback(element) {
-            let feedbackSpan = document.createElement('span');
-            feedbackSpan.innerText = '✨ playing ✨';
-            feedbackSpan.style.fontSize = '0.7rem';
-            feedbackSpan.style.marginLeft = '8px';
-            feedbackSpan.style.fontWeight = 'bold';
-            feedbackSpan.style.background = '#ffebc2';
-            feedbackSpan.style.padding = '2px 8px';
-            feedbackSpan.style.borderRadius = '20px';
-            element.parentNode.insertBefore(feedbackSpan, element.nextSibling);
-            setTimeout(() => feedbackSpan.remove(), 1000);
+        function showPlayFeedback(videoElem) {
+            const container = videoElem.closest('.video-item');
+            if (!container) return;
+            let feedbackSpan = container.querySelector('.play-feedback');
+            if (!feedbackSpan) {
+                feedbackSpan = document.createElement('div');
+                feedbackSpan.className = 'play-feedback';
+                feedbackSpan.style.fontSize = '0.7rem';
+                feedbackSpan.style.textAlign = 'center';
+                feedbackSpan.style.color = '#e67e22';
+                feedbackSpan.style.fontWeight = 'bold';
+                feedbackSpan.style.marginTop = '4px';
+                const noteDiv = container.querySelector('.note-text');
+                if (noteDiv) noteDiv.insertAdjacentElement('afterend', feedbackSpan);
+                else container.appendChild(feedbackSpan);
+            }
+            feedbackSpan.innerHTML = '🐒 ab dekh le, maan ja na! 🎬';
+            setTimeout(() => { if (feedbackSpan) feedbackSpan.innerHTML = ''; }, 1300);
         }
 
-        // click on video itself to play/pause
+        allVideos.forEach(vid => {
+            if (vid) {
+                vid.addEventListener('play', () => showPlayFeedback(vid));
+                vid.addEventListener('error', (e) => {
+                    const container = vid.closest('.video-item');
+                    if (container && !container.querySelector('.perm-error-note')) {
+                        const errBox = document.createElement('div');
+                        errBox.className = 'error-fallback perm-error-note';
+                        errBox.innerHTML = '🍌 Video missing? Save 1.mp4,2.mp4,3.mp4 in /Sdcard/shiza/ 🐒';
+                        const row = container.querySelector('.button-row');
+                        if(row) row.insertAdjacentElement('afterend', errBox);
+                        else container.appendChild(errBox);
+                        setTimeout(() => { if(errBox && errBox.remove) errBox.remove(); }, 8000);
+                    }
+                });
+            }
+        });
+
+        function pauseOtherVideos(currentVideo) {
+            allVideos.forEach(video => {
+                if (video && video !== currentVideo && !video.paused) {
+                    video.pause();
+                }
+            });
+        }
+
         allVideos.forEach(video => {
             if (video) {
+                video.addEventListener('play', function() { pauseOtherVideos(this); });
                 video.addEventListener('click', () => {
                     if (video.paused) video.play().catch(()=>{});
                     else video.pause();
@@ -534,58 +515,55 @@
             }
         });
 
-        // generate floating hearts dynamically (cute background)
-        function createFloatingHeart() {
-            const heartContainer = document.getElementById('floatingHearts');
-            if (!heartContainer) return;
-            const heart = document.createElement('div');
-            heart.classList.add('heart-float');
-            heart.innerHTML = ['❤️','🧡','💛','💚','💙','💜','🖤','🤍','💖','🐒','🐵','🙈','✨','🌸'][Math.floor(Math.random() * 14)];
-            heart.style.left = Math.random() * 100 + '%';
-            heart.style.fontSize = Math.random() * 20 + 15 + 'px';
-            heart.style.animationDuration = Math.random() * 6 + 5 + 's';
-            heart.style.animationDelay = Math.random() * 8 + 's';
-            heartContainer.appendChild(heart);
-            setTimeout(() => { if(heart && heart.remove) heart.remove(); }, 8000);
-        }
-        setInterval(createFloatingHeart, 1800);
-        for(let i=0;i<12;i++) setTimeout(createFloatingHeart, i*300);
-        
-        // additional style for error handling
+        // floating banana hint
+        const infoDiv = document.createElement('div');
+        infoDiv.style.position = 'fixed';
+        infoDiv.style.bottom = '12px';
+        infoDiv.style.left = '12px';
+        infoDiv.style.background = 'rgba(255,220,150,0.9)';
+        infoDiv.style.backdropFilter = 'blur(6px)';
+        infoDiv.style.padding = '5px 14px';
+        infoDiv.style.borderRadius = '60px';
+        infoDiv.style.fontSize = '11px';
+        infoDiv.style.fontWeight = 'bold';
+        infoDiv.style.color = '#8b5a2b';
+        infoDiv.style.fontFamily = 'monospace';
+        infoDiv.style.zIndex = '99';
+        infoDiv.style.pointerEvents = 'none';
+        infoDiv.innerHTML = '📁 Videos path: /Sdcard/shiza/1.mp4 , 2.mp4 , 3.mp4  🐵';
+        document.body.appendChild(infoDiv);
+        setTimeout(() => {
+            infoDiv.style.opacity = '0.6';
+            setTimeout(() => { if(infoDiv && infoDiv.remove) infoDiv.remove(); }, 7000);
+        }, 5000);
+
+        // Extra animated style for monkey text
         const style = document.createElement('style');
         style.textContent = `
-            .error-fallback {
-                font-family: monospace;
+            .play-btn { transition: all 0.15s; }
+            .video-item { transition: transform 0.2s, box-shadow 0.2s; }
+            .sorry-text p { animation: fadeSlide 0.5s ease-out; }
+            @keyframes fadeSlide {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
             }
-            .play-btn {
-                cursor: pointer;
+            .special-sorry {
+                animation: wobble 1s infinite;
             }
-            .vid-container video {
+            @keyframes wobble {
+                0%, 100% { transform: translateX(0px); }
+                25% { transform: translateX(3px); }
+                75% { transform: translateX(-3px); }
+            }
+            .cute-monkey-line {
                 transition: all 0.2s;
             }
-            .vid-container video:hover {
-                filter: brightness(1.05);
+            .cute-monkey-line:hover {
+                transform: scale(1.01);
+                background: #ffdb9f;
             }
         `;
         document.head.appendChild(style);
-        
-        // info toast about video path
-        const infoToast = document.createElement('div');
-        infoToast.style.position = 'fixed';
-        infoToast.style.bottom = '20px';
-        infoToast.style.right = '20px';
-        infoToast.style.background = '#ffefcf';
-        infoToast.style.padding = '6px 14px';
-        infoToast.style.borderRadius = '40px';
-        infoToast.style.fontSize = '11px';
-        infoToast.style.fontWeight = 'bold';
-        infoToast.style.color = '#b6512c';
-        infoToast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-        infoToast.style.zIndex = '999';
-        infoToast.style.backdropFilter = 'blur(5px)';
-        infoToast.innerHTML = '📁 Videos path: /Sdcard/shiza/1.mp4 etc. ✨';
-        document.body.appendChild(infoToast);
-        setTimeout(() => infoToast.remove(), 7000);
     })();
 </script>
 </body>
