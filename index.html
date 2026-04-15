@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Shiza's Cheer Up Corner ✨</title>
+    <title>Shiza Meri Jaan ❤️‍🔥 | Maan Ja Na</title>
     <style>
         * {
             margin: 0;
@@ -13,8 +13,8 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(145deg, #fff9f0 0%, #ffe6f0 100%);
-            font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, 'Quicksand', sans-serif;
+            background: radial-gradient(circle at 10% 30%, #ffdde1 0%, #f9c9e2 100%);
+            font-family: 'Poppins', 'Segoe UI', 'Quicksand', system-ui, -apple-system, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -23,602 +23,569 @@
             overflow-x: hidden;
         }
 
-        /* Cute floating elements background */
-        body::before {
-            content: "🌸✨💖🎀";
-            font-size: 80px;
-            position: absolute;
-            bottom: 10px;
+        /* floating animated elements */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
             left: 0;
-            opacity: 0.08;
-            white-space: nowrap;
-            pointer-events: none;
             width: 100%;
-            text-align: center;
-            letter-spacing: 30px;
-            transform: rotate(-5deg);
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.5;
+            animation: floatHeart linear infinite;
+            color: #ff88aa;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         /* main card */
         .card {
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(3px);
-            border-radius: 68px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(241, 147, 187, 0.2);
+            background: rgba(255, 250, 245, 0.96);
+            backdrop-filter: blur(2px);
+            border-radius: 72px;
+            box-shadow: 0 30px 55px -15px rgba(0, 0, 0, 0.3), 0 8px 25px rgba(255, 105, 150, 0.3);
             overflow: hidden;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 215, 225, 0.7);
-            animation: floatIn 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 2px solid rgba(255, 215, 225, 0.9);
+            position: relative;
+            z-index: 2;
+            animation: bounceIn 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
         }
 
-        @keyframes floatIn {
+        @keyframes bounceIn {
             0% {
                 opacity: 0;
-                transform: translateY(40px) scale(0.96);
+                transform: scale(0.9) translateY(40px);
+            }
+            60% {
+                transform: scale(1.02) translateY(-5px);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0) scale(1);
+                transform: scale(1) translateY(0);
             }
         }
 
-        /* header section */
+        /* header with monkey & fun vibe */
         .hero {
-            background: linear-gradient(135deg, #ffb7c5 0%, #ff8da1 100%);
-            padding: 2rem 2rem 1.8rem;
+            background: linear-gradient(145deg, #ffb347, #ff8c42);
+            padding: 1.8rem 2rem 1.2rem;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
-        .hero::after {
-            content: "🐻‍❄️";
+        .hero::before {
+            content: "🐒🐵🙈🙉🙊";
             position: absolute;
-            bottom: -20px;
-            right: 30px;
-            font-size: 55px;
-            opacity: 0.3;
-            transform: rotate(10deg);
+            font-size: 70px;
+            bottom: -15px;
+            left: -20px;
+            opacity: 0.2;
             pointer-events: none;
+            white-space: nowrap;
+            transform: rotate(-8deg);
         }
 
         .hero h1 {
-            font-size: 2.6rem;
-            font-weight: 700;
-            color: white;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            letter-spacing: -0.3px;
-            word-break: keep-all;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff3e0;
+            text-shadow: 5px 5px 0 #c95a1a;
+            letter-spacing: -0.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .hero h1 span {
             display: inline-block;
-            animation: bounceLove 1.2s infinite ease;
+            animation: wiggle 1.2s infinite ease;
         }
 
-        @keyframes bounceLove {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(12deg); }
+            75% { transform: rotate(-8deg); }
         }
 
-        .hero p {
-            color: #fff5f7;
-            font-weight: 500;
+        .bandri-badge {
+            background: #f7d44a;
+            color: #a53f2b;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 1rem;
+            display: inline-block;
             margin-top: 12px;
-            font-size: 1.2rem;
-            backdrop-filter: blur(2px);
+            box-shadow: 0 4px 0 #b45f2b;
         }
 
-        /* apology cute message */
-        .apology-box {
-            background: #fffef7;
-            margin: 1.5rem 2rem 0.5rem 2rem;
-            padding: 1rem 1.4rem;
-            border-radius: 48px;
+        /* animated message area */
+        .apology-message {
+            padding: 1.5rem 2rem 0.5rem;
+            text-align: center;
+        }
+
+        .message-bubble {
+            background: #fff0e7;
+            border-radius: 58px;
+            padding: 1.5rem 1.8rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border: 2px solid #ffcd94;
+            transition: transform 0.2s;
+        }
+
+        .animated-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #bb5e00;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .animated-text p {
+            margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
             flex-wrap: wrap;
-            box-shadow: 0 8px 18px rgba(255, 105, 130, 0.1);
-            border: 1px solid #ffe2ea;
+            gap: 12px;
+            animation: fadeSlideUp 0.5s ease backwards;
         }
 
-        .apology-text {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #c06c84;
-            background: #fff0f3;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+        .animated-text p:nth-child(1) { animation-delay: 0.05s; }
+        .animated-text p:nth-child(2) { animation-delay: 0.15s; }
+        .animated-text p:nth-child(3) { animation-delay: 0.25s; }
+        .animated-text p:nth-child(4) { animation-delay: 0.35s; }
+        .animated-text p:nth-child(5) { animation-delay: 0.45s; }
+        .animated-text p:nth-child(6) { animation-delay: 0.55s; }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .apology-text i {
-            font-size: 1.4rem;
+        .cute-emoji {
+            font-size: 1.8rem;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+            animation: bounceEmoji 0.8s infinite alternate;
         }
 
-        /* video gallery grid */
+        @keyframes bounceEmoji {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-6px); }
+        }
+
+        .highlight {
+            background: #ffe0b5;
+            border-radius: 60px;
+            padding: 0.2rem 1rem;
+            font-family: monospace;
+            font-weight: bold;
+            color: #c2521a;
+        }
+
+        /* video gallery */
         .video-gallery {
-            padding: 1.8rem 2rem 2.2rem;
+            padding: 1.2rem 2rem 1.8rem;
             display: flex;
             flex-direction: column;
             gap: 1.8rem;
         }
 
-        /* each video item */
         .video-item {
-            background: #ffffffcc;
-            backdrop-filter: blur(8px);
-            border-radius: 44px;
+            background: #ffffffdd;
+            backdrop-filter: blur(12px);
+            border-radius: 48px;
             overflow: hidden;
-            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.25s ease, box-shadow 0.3s;
-            border: 1px solid rgba(255, 192, 203, 0.5);
+            transition: all 0.3s;
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ffc7a2;
         }
 
         .video-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 22px 32px -12px rgba(255, 80, 120, 0.25);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px #ffa07a66;
         }
 
-        /* video container with aspect ratio & auto adjustment */
         .vid-container {
             position: relative;
             width: 100%;
-            background: #1e1a1f;
-            border-radius: 32px 32px 28px 28px;
-            overflow: hidden;
+            background: #221c19;
             aspect-ratio: 16 / 9;
-            /* ensures responsive 16:9, but videos will fit */
+            overflow: hidden;
         }
 
         video {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            background: #0a0a0a;
+            background: #000;
             display: block;
-            transition: all 0.2s;
         }
 
-        /* button row */
         .button-row {
-            padding: 1rem 1.2rem 1.2rem 1.2rem;
-            background: rgba(255, 248, 245, 0.9);
+            padding: 0.9rem 1.2rem 1rem;
             display: flex;
             justify-content: center;
             gap: 1.2rem;
             flex-wrap: wrap;
-            border-top: 1px solid #ffe2ed;
+            background: #fffaf2;
+            border-top: 1px solid #ffe0bf;
         }
 
         .play-btn {
-            background: linear-gradient(115deg, #ff8aa8, #ff6b8f);
+            background: linear-gradient(115deg, #ff9966, #ff5e62);
             border: none;
-            padding: 0.7rem 1.6rem;
+            padding: 0.7rem 1.8rem;
             border-radius: 60px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
             color: white;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             cursor: pointer;
-            box-shadow: 0 6px 0 #b3415f;
-            transition: all 0.12s linear;
-            letter-spacing: 0.5px;
+            transition: all 0.15s;
+            box-shadow: 0 5px 0 #a63f2c;
+            font-family: inherit;
         }
 
         .play-btn:active {
             transform: translateY(2px);
-            box-shadow: 0 3px 0 #b3415f;
+            box-shadow: 0 2px 0 #a63f2c;
         }
 
-        /* extra cute icons */
-        .play-btn i {
-            font-size: 1.2rem;
-            font-style: normal;
-            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+        .play-btn:hover {
+            background: linear-gradient(115deg, #ffad7a, #ff7579);
+            transform: scale(1.01);
         }
 
         .note-text {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-align: center;
-            margin-top: 6px;
-            color: #c47e94;
-            font-weight: 500;
+            background: #fff2e4;
+            padding: 4px;
+            color: #c26e38;
+            font-weight: 600;
         }
 
-        /* footer */
-        .footer-message {
-            background: #ffeef3;
-            padding: 1rem 1.5rem;
+        .footer {
+            background: #ffdec2;
+            padding: 1rem;
             text-align: center;
-            font-size: 0.9rem;
-            color: #bf6f89;
-            font-weight: 500;
-            border-top: 1px dashed #ffccd9;
+            font-weight: 600;
+            color: #b6511a;
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
             flex-wrap: wrap;
+            font-size: 0.9rem;
         }
 
-        .heart-animation {
-            display: inline-block;
-            animation: pulseHeart 0.9s infinite;
-        }
-
-        @keyframes pulseHeart {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        /* responsive touches */
-        @media (max-width: 640px) {
-            .card {
-                border-radius: 48px;
+        @media (max-width: 650px) {
+            .animated-text {
+                font-size: 1rem;
             }
             .hero h1 {
-                font-size: 1.9rem;
+                font-size: 1.7rem;
             }
             .video-gallery {
-                padding: 1.2rem;
+                padding: 1rem;
             }
-            .play-btn {
-                padding: 0.5rem 1.2rem;
-                font-size: 0.9rem;
-            }
-            .apology-box {
-                margin: 1rem 1rem 0;
+            .message-bubble {
+                padding: 1rem;
             }
         }
 
-        /* For custom file error fallback - soft */
-        .error-fallback {
-            background: #ffe1e6;
-            border-radius: 24px;
-            padding: 8px 12px;
-            font-size: 0.7rem;
-            color: #bc6f86;
-            text-align: center;
+        .bandri-animation {
+            display: inline-block;
+            animation: shakeHead 2s infinite;
         }
 
-        button:focus, video:focus {
-            outline: none;
+        @keyframes shakeHead {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            75% { transform: translateX(4px); }
+        }
+
+        .cute-tag {
+            background: #f9e2b7;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.2rem 0.8rem;
+            gap: 6px;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
+<div class="floating-hearts" id="floatingHearts"></div>
 
 <div class="card">
     <div class="hero">
-        <h1>🌸 For My <span>Shiza</span> 🌸</h1>
-        <p>✨ A little sunshine just for you ✨</p>
+        <h1>
+            <span>🐒</span> OYE SHIZA! <span>🙈</span>
+        </h1>
+        <div class="bandri-badge">✨ Meri Bandri ✨ Churail ✨ Mandri ✨</div>
     </div>
-    
-    <div class="apology-box">
-        <div class="apology-text">
-            <i>🐣</i> Hey Shiza! I'm really sorry...
-        </div>
-        <div class="apology-text">
-            <i>💗</i> You mean the world to me!
-        </div>
-        <div class="apology-text">
-            <i>🎀</i> Please forgive me? 🥺
+
+    <div class="apology-message">
+        <div class="message-bubble">
+            <div class="animated-text">
+                <p> <span class="cute-emoji">🥺👉👈</span> Chal ab maan b ja na bas krde na narazgi <span class="cute-emoji">💢➡️😇</span> </p>
+                <p> <span class="cute-emoji">🗣️📢</span> Inna rokha rokha bolti thk se reply b nhi krti <span class="cute-emoji">😤😘</span> </p>
+                <p> <span class="cute-emoji">🙆‍♂️💞</span> Maan b ja na oye bandri <span class="cute-emoji">🐒✨</span> </p>
+                <p> <span class="cute-emoji">🧙‍♀️💋</span> Oye churail, oye sun b ly na maan ja oye <span class="cute-emoji">🫤🫤🫤</span> </p>
+                <p> <span class="cute-emoji">🤏🏻✨</span> ittu c 🤏🏻 cute c mandri ha na meri <span class="cute-emoji">🐒💖</span> </p>
+                <p> <span class="cute-emoji">🎀🤝</span> chal ab maan ja na <span class="highlight">❤️‍🔥 MERI JAAN ❤️‍🔥</span> <span class="cute-emoji bandri-animation">🙈🙉🙊</span> </p>
+            </div>
         </div>
     </div>
 
     <div class="video-gallery">
         <!-- Video 1 -->
         <div class="video-item">
-            <div class="vid-container" id="vid1-container">
+            <div class="vid-container">
                 <video id="video1" preload="metadata" playsinline>
                     <source src="/Sdcard/shiza/1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
             </div>
             <div class="button-row">
-                <button class="play-btn" data-video="video1">
-                    <i>🎬</i> Play Video 1
-                </button>
-                <button class="play-btn replay-btn" data-video="video1" data-replay="true">
-                    <i>🔄</i> Replay
-                </button>
+                <button class="play-btn" data-video="video1">🎬 Play Video 1</button>
+                <button class="play-btn replay-btn" data-video="video1" data-replay="true">🔄 Replay</button>
             </div>
-            <div class="note-text">💖 special memory for you 💖</div>
+            <div class="note-text">💖 teri yaad 💖</div>
         </div>
 
         <!-- Video 2 -->
         <div class="video-item">
-            <div class="vid-container" id="vid2-container">
+            <div class="vid-container">
                 <video id="video2" preload="metadata" playsinline>
                     <source src="/Sdcard/shiza/2.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="button-row">
-                <button class="play-btn" data-video="video2">
-                    <i>🎬</i> Play Video 2
-                </button>
-                <button class="play-btn replay-btn" data-video="video2" data-replay="true">
-                    <i>🔄</i> Replay
-                </button>
+                <button class="play-btn" data-video="video2">🎬 Play Video 2</button>
+                <button class="play-btn replay-btn" data-video="video2" data-replay="true">🔄 Replay</button>
             </div>
-            <div class="note-text">🌸 hugs and cute moments 🌸</div>
+            <div class="note-text">🐒 bandri special 🐒</div>
         </div>
 
         <!-- Video 3 -->
         <div class="video-item">
-            <div class="vid-container" id="vid3-container">
+            <div class="vid-container">
                 <video id="video3" preload="metadata" playsinline>
                     <source src="/Sdcard/shiza/3.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="button-row">
-                <button class="play-btn" data-video="video3">
-                    <i>🎬</i> Play Video 3
-                </button>
-                <button class="play-btn replay-btn" data-video="video3" data-replay="true">
-                    <i>🔄</i> Replay
-                </button>
+                <button class="play-btn" data-video="video3">🎬 Play Video 3</button>
+                <button class="play-btn replay-btn" data-video="video3" data-replay="true">🔄 Replay</button>
             </div>
-            <div class="note-text">🎀 you make everything better 🎀</div>
+            <div class="note-text">🤏🏻 ittu c cute moment 🤏🏻</div>
         </div>
     </div>
 
-    <div class="footer-message">
-        <span class="heart-animation">💗</span> Shiza, I made this site just for you! <span class="heart-animation">💗</span><br>
-        <span style="font-size:0.75rem;">(Tap any Play button to watch — videos from your device /Sdcard/shiza/)</span>
+    <div class="footer">
+        <span>🐵 AB MAAN B JA NA BANDRI 🐵</span>
+        <span>❤️‍🔥 OYE CHURAIL SUN LY ❤️‍🔥</span>
+        <span>✨🤏🏻 MERI MANDRI 🤏🏻✨</span>
     </div>
 </div>
 
 <script>
     (function() {
-        // References to video elements
+        // videos
         const video1 = document.getElementById('video1');
         const video2 = document.getElementById('video2');
         const video3 = document.getElementById('video3');
         const allVideos = [video1, video2, video3];
 
-        // Helper: robust play with error handling + auto-adjust (if video fails, show sweet fallback hint)
-        function playVideoWithGrace(videoElement, isReplay = false) {
+        function playVideoGrace(videoElement, isReplay = false) {
             if (!videoElement) return;
-
-            // If replay or if video is paused/ended, we try to play.
-            // Pause any other videos? Not necessary but adds cute UX: optional, but we don't force stop others
-            // but we want each click to play that specific video.
-            
-            // If video is already playing and not replay action -> do nothing (but we could re-play? but replay button separate)
-            // If it's replay OR video ended or paused, we attempt play.
             if (isReplay) {
-                // replay: reset to start and play
                 videoElement.currentTime = 0;
-                videoElement.play().catch(handlePlayError);
+                videoElement.play().catch(handleError);
             } else {
-                // normal play: if video is paused or ended or hasn't started
                 if (videoElement.paused || videoElement.ended) {
-                    videoElement.play().catch(handlePlayError);
-                } else {
-                    // already playing, but we can re-trigger? but we'll just keep playing, no big deal.
-                    // but sometimes user expects a replay via play button? We have separate replay, so fine.
-                    // For better experience: if playing, do nothing but add a little feedback? No error.
+                    videoElement.play().catch(handleError);
                 }
             }
-
-            function handlePlayError(error) {
-                console.warn("Playback failed:", error);
-                // Create or update a friendly error tooltip under video container
+            function handleError(err) {
+                console.warn("Playback error", err);
                 let container = videoElement.closest('.video-item');
-                if (container) {
-                    let existingError = container.querySelector('.file-access-note');
-                    if (!existingError) {
-                        const errDiv = document.createElement('div');
-                        errDiv.className = 'error-fallback file-access-note';
-                        errDiv.style.margin = '8px 12px 12px 12px';
-                        errDiv.style.borderRadius = '40px';
-                        errDiv.innerHTML = '🌸 Oops! Video file not found at <strong>/Sdcard/shiza/</strong><br> Please place 1.mp4, 2.mp4, 3.mp4 in that folder. 🌸';
-                        const buttonRow = container.querySelector('.button-row');
-                        if (buttonRow) {
-                            buttonRow.insertAdjacentElement('afterend', errDiv);
-                        } else {
-                            container.appendChild(errDiv);
-                        }
-                        // auto remove after 5 sec? but keeps useful info
-                        setTimeout(() => {
-                            if(errDiv && errDiv.remove) errDiv.remove();
-                        }, 7000);
-                    }
+                if (container && !container.querySelector('.file-access-error')) {
+                    const errDiv = document.createElement('div');
+                    errDiv.className = 'error-fallback file-access-error';
+                    errDiv.style.background = '#ffe0e0';
+                    errDiv.style.padding = '6px 12px';
+                    errDiv.style.margin = '6px 12px';
+                    errDiv.style.borderRadius = '30px';
+                    errDiv.style.fontSize = '0.7rem';
+                    errDiv.style.color = '#b13e3e';
+                    errDiv.style.textAlign = 'center';
+                    errDiv.innerHTML = '🌸 Video missing? Place 1.mp4 , 2.mp4 , 3.mp4 in /Sdcard/shiza/ or change path 🌸';
+                    const btnRow = container.querySelector('.button-row');
+                    if (btnRow) btnRow.insertAdjacentElement('afterend', errDiv);
+                    setTimeout(() => errDiv.remove(), 5000);
                 }
-                // Also show a small console friendly tip
             }
         }
 
-        // Attach event listeners to all play buttons and replay buttons
+        // pause other videos for cleaner audio
+        function pauseOthers(currentVideo) {
+            allVideos.forEach(vid => {
+                if (vid && vid !== currentVideo && !vid.paused) {
+                    vid.pause();
+                }
+            });
+        }
+
+        allVideos.forEach(vid => {
+            if (vid) {
+                vid.addEventListener('play', () => pauseOthers(vid));
+                vid.addEventListener('error', () => {
+                    const parent = vid.closest('.video-item');
+                    if (parent && !parent.querySelector('.native-error-msg')) {
+                        const errNote = document.createElement('div');
+                        errNote.className = 'native-error-msg';
+                        errNote.innerText = '⚠️ Video file not found, but site is still cute! ⚠️';
+                        errNote.style.fontSize = '0.7rem';
+                        errNote.style.background = '#ffdede';
+                        errNote.style.padding = '4px';
+                        errNote.style.borderRadius = '30px';
+                        errNote.style.textAlign = 'center';
+                        const containerDiv = parent.querySelector('.button-row');
+                        if (containerDiv) containerDiv.insertAdjacentElement('afterend', errNote);
+                        setTimeout(() => errNote.remove(), 4000);
+                    }
+                });
+            }
+        });
+
         const allPlayBtns = document.querySelectorAll('.play-btn');
         allPlayBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const targetVideoId = btn.getAttribute('data-video');
-                const isReplayAction = btn.getAttribute('data-replay') === 'true';
-                if (targetVideoId) {
-                    const videoElem = document.getElementById(targetVideoId);
-                    if (videoElem) {
-                        // If it's replay button, pass true. else false.
-                        if (isReplayAction) {
-                            playVideoWithGrace(videoElem, true);
-                        } else {
-                            playVideoWithGrace(videoElem, false);
-                        }
-                    } else {
-                        console.warn("video element not found");
+                const targetId = btn.getAttribute('data-video');
+                const isReplay = btn.getAttribute('data-replay') === 'true';
+                if (targetId) {
+                    const targetVideo = document.getElementById(targetId);
+                    if (targetVideo) {
+                        playVideoGrace(targetVideo, isReplay);
+                        // show cute mini feedback
+                        showMiniFeedback(btn);
                     }
                 }
             });
         });
 
-        // Optional: Auto adjust video size: videos inside containers already responsive with aspect-ratio.
-        // But also ensure that if video metadata loaded we keep object-fit contain -> always fits.
-        // additionally, we can add listeners to force resizing on window resize (already fluid).
-        window.addEventListener('resize', () => {
-            // just re-trigger nothing heavy, but video containers will adjust automatically.
-        });
-
-        // Small extra cute effect: show a little toast-like if video plays successfully
-        function showPlayFeedback(videoElem) {
-            const container = videoElem.closest('.video-item');
-            if (!container) return;
-            let feedbackSpan = container.querySelector('.play-feedback');
-            if (!feedbackSpan) {
-                feedbackSpan = document.createElement('div');
-                feedbackSpan.className = 'play-feedback';
-                feedbackSpan.style.fontSize = '0.7rem';
-                feedbackSpan.style.textAlign = 'center';
-                feedbackSpan.style.color = '#ff90aa';
-                feedbackSpan.style.marginTop = '4px';
-                feedbackSpan.style.fontWeight = '500';
-                const noteDiv = container.querySelector('.note-text');
-                if (noteDiv) noteDiv.insertAdjacentElement('afterend', feedbackSpan);
-                else container.appendChild(feedbackSpan);
-            }
-            feedbackSpan.innerHTML = '✨ playing now! ✨';
-            setTimeout(() => {
-                if (feedbackSpan) feedbackSpan.innerHTML = '';
-            }, 1200);
+        function showMiniFeedback(element) {
+            let feedbackSpan = document.createElement('span');
+            feedbackSpan.innerText = '✨ playing ✨';
+            feedbackSpan.style.fontSize = '0.7rem';
+            feedbackSpan.style.marginLeft = '8px';
+            feedbackSpan.style.fontWeight = 'bold';
+            feedbackSpan.style.background = '#ffebc2';
+            feedbackSpan.style.padding = '2px 8px';
+            feedbackSpan.style.borderRadius = '20px';
+            element.parentNode.insertBefore(feedbackSpan, element.nextSibling);
+            setTimeout(() => feedbackSpan.remove(), 1000);
         }
 
-        // Listen to play events on videos to give cute feedback
-        allVideos.forEach(vid => {
-            if(vid) {
-                vid.addEventListener('play', () => {
-                    showPlayFeedback(vid);
-                });
-                // If video can't load source due to missing file, we might show fallback after canplay fails
-                vid.addEventListener('error', (e) => {
-                    // media error (file missing / path issue)
-                    const container = vid.closest('.video-item');
-                    if (container && !container.querySelector('.perm-error-note')) {
-                        const errBox = document.createElement('div');
-                        errBox.className = 'error-fallback perm-error-note';
-                        errBox.style.margin = '6px 12px 12px 12px';
-                        errBox.innerHTML = '💔 Video file not accessible.<br> Please save 1.mp4 / 2.mp4 / 3.mp4 in <strong>/Sdcard/shiza/</strong> 💔';
-                        const row = container.querySelector('.button-row');
-                        if(row) row.insertAdjacentElement('afterend', errBox);
-                        else container.appendChild(errBox);
-                        setTimeout(() => {
-                            if(errBox && errBox.remove) errBox.remove();
-                        }, 8000);
-                    }
-                });
-            }
-        });
-
-        // For initial load: if videos sources are valid, preload friendly but no autoplay.
-        // Also we can add a cute hover effect on video container
-        const containers = document.querySelectorAll('.vid-container');
-        containers.forEach(container => {
-            container.addEventListener('mouseenter', () => {
-                container.style.transition = 'all 0.2s';
-                container.style.boxShadow = '0 0 0 3px rgba(255, 140, 170, 0.4)';
-            });
-            container.addEventListener('mouseleave', () => {
-                container.style.boxShadow = 'none';
-            });
-        });
-
-        // ensure that videos that are already loaded can be played manually. plus handle ios quirks: playsinline already added.
-        // Additional professionalism: when any video starts, pause others? maybe nice to avoid overlapping audio? 
-        // optional but cute: pause other videos when one starts playing to not have mixed sounds
-        function pauseOtherVideos(currentVideo) {
-            allVideos.forEach(video => {
-                if (video && video !== currentVideo && !video.paused) {
-                    video.pause();
-                }
-            });
-        }
-
+        // click on video itself to play/pause
         allVideos.forEach(video => {
             if (video) {
-                video.addEventListener('play', function() {
-                    pauseOtherVideos(this);
+                video.addEventListener('click', () => {
+                    if (video.paused) video.play().catch(()=>{});
+                    else video.pause();
                 });
             }
         });
 
-        // Cute message: on page load show a little floating heart animation via console? not needed.
-        // Add document ready cute floating element
+        // generate floating hearts dynamically (cute background)
+        function createFloatingHeart() {
+            const heartContainer = document.getElementById('floatingHearts');
+            if (!heartContainer) return;
+            const heart = document.createElement('div');
+            heart.classList.add('heart-float');
+            heart.innerHTML = ['❤️','🧡','💛','💚','💙','💜','🖤','🤍','💖','🐒','🐵','🙈','✨','🌸'][Math.floor(Math.random() * 14)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+            heart.style.animationDuration = Math.random() * 6 + 5 + 's';
+            heart.style.animationDelay = Math.random() * 8 + 's';
+            heartContainer.appendChild(heart);
+            setTimeout(() => { if(heart && heart.remove) heart.remove(); }, 8000);
+        }
+        setInterval(createFloatingHeart, 1800);
+        for(let i=0;i<12;i++) setTimeout(createFloatingHeart, i*300);
+        
+        // additional style for error handling
         const style = document.createElement('style');
         style.textContent = `
-            .play-btn {
-                transition: transform 0.1s, box-shadow 0.1s;
+            .error-fallback {
+                font-family: monospace;
             }
-            .play-btn:hover {
-                transform: scale(1.02);
-                background: linear-gradient(115deg, #ff98b2, #ff7b9c);
+            .play-btn {
                 cursor: pointer;
             }
-            video {
-                transition: filter 0.3s;
+            .vid-container video {
+                transition: all 0.2s;
             }
-            video:hover {
-                filter: brightness(1.02);
+            .vid-container video:hover {
+                filter: brightness(1.05);
             }
         `;
         document.head.appendChild(style);
-
-        // small dynamic greeting by name
-        const titleElement = document.querySelector('.hero h1 span');
-        if(titleElement) {
-            // subtle pulse effect already in css
-        }
         
-        // Also, if the user taps on video itself, we can make it play/pause? Not needed but optional add?
-        // Let's add for extra cuteness: double click on video plays from start? but we keep clean.
-        // Instead: click on video container will behave like play button? maybe confusing, but we can bind simple.
-        // better: Click on video will play/pause? Actually user may expect. add but not override.
-        allVideos.forEach(video => {
-            if(video) {
-                video.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    if (video.paused) {
-                        video.play().catch(()=>{});
-                    } else {
-                        video.pause();
-                    }
-                });
-            }
-        });
-        
-        // final: if file paths are correct, videos will load. For user clarity, display info message about location.
-        // Add a small info bubble at bottom.
-        const infoDiv = document.createElement('div');
-        infoDiv.style.position = 'fixed';
-        infoDiv.style.bottom = '12px';
-        infoDiv.style.left = '12px';
-        infoDiv.style.background = 'rgba(255,220,230,0.85)';
-        infoDiv.style.backdropFilter = 'blur(5px)';
-        infoDiv.style.padding = '5px 12px';
-        infoDiv.style.borderRadius = '60px';
-        infoDiv.style.fontSize = '11px';
-        infoDiv.style.fontWeight = '500';
-        infoDiv.style.color = '#b14b6b';
-        infoDiv.style.fontFamily = 'monospace';
-        infoDiv.style.zIndex = '99';
-        infoDiv.style.pointerEvents = 'none';
-        infoDiv.innerHTML = '📁 Videos path: /Sdcard/shiza/1.mp4 , 2.mp4 , 3.mp4';
-        document.body.appendChild(infoDiv);
-        setTimeout(() => {
-            infoDiv.style.opacity = '0.7';
-            setTimeout(() => {
-                if(infoDiv && infoDiv.remove) infoDiv.remove();
-            }, 8000);
-        }, 5000);
+        // info toast about video path
+        const infoToast = document.createElement('div');
+        infoToast.style.position = 'fixed';
+        infoToast.style.bottom = '20px';
+        infoToast.style.right = '20px';
+        infoToast.style.background = '#ffefcf';
+        infoToast.style.padding = '6px 14px';
+        infoToast.style.borderRadius = '40px';
+        infoToast.style.fontSize = '11px';
+        infoToast.style.fontWeight = 'bold';
+        infoToast.style.color = '#b6512c';
+        infoToast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+        infoToast.style.zIndex = '999';
+        infoToast.style.backdropFilter = 'blur(5px)';
+        infoToast.innerHTML = '📁 Videos path: /Sdcard/shiza/1.mp4 etc. ✨';
+        document.body.appendChild(infoToast);
+        setTimeout(() => infoToast.remove(), 7000);
     })();
 </script>
 </body>
